@@ -34,6 +34,7 @@ export default function Router() {
       children: [
         { element: <Navigate to={DEFAULT_PATH} replace />, index: true },
         { path: "home", element: <HomePage /> },
+        { path: "upload", element: <UploadFilePage /> },
 
 
 
@@ -51,5 +52,6 @@ const VerifyPage = Loadable(lazy(() => import("../pages/Verify")));
 
 
 const HomePage = Loadable(lazy(() => import("../pages/Home")));
+const UploadFilePage = Loadable(lazy(() => import("../pages/UploadFile")));
 
 const Page404 = Loadable(lazy(() => import("../pages/Page404")));

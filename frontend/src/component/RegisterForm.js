@@ -1,14 +1,14 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Alert, IconButton, InputAdornment, Stack, Button } from "@mui/material";
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import React, { useState } from "react";
+import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import * as Yup from "yup";
 import { RHFTextField } from "../component/hook-form";
-import FormProvider from "../component/hook-form/FormProvider";
 import { RegisterUser } from "../redux/slices/auth";
+import FormProvider from "../component/hook-form/FormProvider";
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import { Alert, IconButton, InputAdornment, Stack, Button } from "@mui/material";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();

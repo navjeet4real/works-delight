@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { GetCategory } from '../redux/slices/app';
+import { Stack } from '@mui/material';
 
 
 
@@ -11,13 +12,15 @@ const DisplayTree = () => {
   const [name, setName] = useState();
 
   const handleClick = () => {
-    dispatch(GetCategory({name}));
+    dispatch(GetCategory({ name }));
   }
   return (
     <>
-     <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      <button onClick={handleClick}>Get</button>
-    {/* {
+      <Stack sx={{ maxWidth: 400 }}>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        <button onClick={handleClick}>Get</button>
+      </Stack>
+      {/* {
       display && display
     } */}
     </>

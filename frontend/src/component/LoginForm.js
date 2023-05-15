@@ -9,11 +9,9 @@ import {
   InputAdornment,
   Stack,
   IconButton,
-  Link,
   Button,
 } from "@mui/material";
 import { RHFTextField } from "../component/hook-form";
-import { Link as RouterLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LoginUser } from "../redux/slices/auth";
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
@@ -47,9 +45,7 @@ const LoginForm = () => {
 
   const onSubmit = async (data) => {
     try {
-
       dispatch(LoginUser(data))
-
     } catch (error) {
       console.error(error);
       reset();
@@ -91,16 +87,6 @@ const LoginForm = () => {
         size="large"
         type="submit"
         variant="contained"
-        sx={{
-          bgcolor: "text.primary",
-          color: (theme) =>
-            theme.palette.mode === "light" ? "common.white" : "grey",
-          "&hover": {
-            bgcolor: "text.primary",
-            color: (theme) =>
-              theme.palette.mode === "light" ? "common.white" : "grey",
-          },
-        }}
       >
         Login
       </Button>

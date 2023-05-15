@@ -103,3 +103,26 @@ export function GetCategory(formValues) {
       })
   }
 }
+
+export function UploadFileFunc(formValues){
+  console.log(formValues, "bbbbbbbbbbbbbbbbbb")
+  return async (dispatch, getState) => {
+    await axios
+      .post(
+        `/app/upload-file`,
+        {
+          ...formValues,
+        },
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      ).then(function (response) {
+        console.log(response, "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv");
+
+      }).catch(function (response) {
+        console.log(response);
+      })
+  }
+}

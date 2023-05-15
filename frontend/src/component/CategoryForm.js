@@ -1,19 +1,10 @@
 import React from 'react'
-import { useState } from "react";
 import FormProvider from "../component/hook-form/FormProvider";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import {
-  Alert,
-  InputAdornment,
-  Stack,
-  IconButton,
-  Link,
-  Button,
-} from "@mui/material";
+import { Alert, Stack, Button } from "@mui/material";
 import { RHFTextField } from "../component/hook-form";
-import { Link as RouterLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { CreateCategory } from '../redux/slices/app';
 
@@ -56,23 +47,26 @@ const CategoryForm = () => {
   return (
     <>
       <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-        <Stack spacing={3}>
+        <Stack spacing={3} sx={{ maxWidth: 400 }}>
+          {!!errors.afterSubmit && (
+            <Alert severity="error">{errors.afterSubmit.message}</Alert>
+          )}
           <RHFTextField name="name" label="Category Name" />
           <RHFTextField
             name="parent"
             label="Parent Id"
           />
-        </Stack>
-        <Button
-          fullWidth
-          color="inherit"
-          size="large"
-          type="submit"
-          variant="contained"
+          <Button
+            fullWidth
+            color="inherit"
+            size="large"
+            type="submit"
+            variant="contained"
 
-        >
-          Create
-        </Button>
+          >
+            Create
+          </Button>
+        </Stack>
       </FormProvider>
     </>
   )

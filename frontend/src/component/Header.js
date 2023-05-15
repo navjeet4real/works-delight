@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link as RouterLink
+ } from "react-router-dom";
 import {
   Stack,
   Link,
-  Avatar,
   Box,
   Typography,
-  Menu,
-  MenuItem,
   Button,
 } from "@mui/material";
-// import { Article, SignOut, User } from "phosphor-react";
 import { LogoutUser } from "../redux/slices/auth";
 import { useDispatch, useSelector } from "react-redux";
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -43,13 +40,13 @@ const Header = () => {
           >
             <Link
               component={RouterLink}
-              to="/home"
+              to="/upload"
               color={"inherit"}
               variant="h6"
               fontSize={30}
               underline="none"
             >
-              Home
+              Upload File
             </Link>
           </Stack>
           <Stack>
@@ -61,7 +58,7 @@ const Header = () => {
               fontSize={30}
               underline="none"
             >
-              Assignment
+              Tree Structure
             </Link>
           </Stack>
           <Stack justifyContent={"row"} direction="row" spacing={2}>

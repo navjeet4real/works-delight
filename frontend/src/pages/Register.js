@@ -13,8 +13,6 @@ const Register = () => {
           Sign in
         </Link>
       </Stack>
-
-
       <RegisterForm />
     </Stack>
   );
