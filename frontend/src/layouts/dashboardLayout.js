@@ -3,6 +3,7 @@ import { Stack } from "@mui/material";
 import { Navigate, Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../component/Header";
+import Category from "../pages/Category";
 
 const DashboardLayout = () => {
   const { isLoggedIn } = useSelector((state) => state.auth);
@@ -13,7 +14,7 @@ const DashboardLayout = () => {
   return (
     <>
       <Stack>
-      <Header />
+        <Header />
         <Outlet />
       </Stack>
     </>

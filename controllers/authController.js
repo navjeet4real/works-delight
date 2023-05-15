@@ -4,7 +4,7 @@ const filterObj = require("../utils/filterObj");
 const crypto = require("crypto");
 const { promisify } = require("util");
 const otpGenerator = require("otp-generator");
-
+const category = require("../models/category")
 // function to return jwt token
 const signToken = (userId) => jwt.sign({ userId }, process.env.SECRET_KEY);
 
